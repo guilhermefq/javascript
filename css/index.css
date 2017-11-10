@@ -141,8 +141,14 @@ button[disabled=disabled], button:disabled {
 	color: red;
 }
 
-#filtrar-tabela{
-	width: 200px;
+#filtrar-nome{
+	width: 170px;
+	height: 35px;
+	margin-bottom: 10px;
+}
+
+#filtrar-peso{
+	width: 170px;
 	height: 35px;
 	margin-bottom: 10px;
 }
@@ -155,3 +161,4 @@ button[disabled=disabled], button:disabled {
 .invisivel{
 	display: none;
 }
+
