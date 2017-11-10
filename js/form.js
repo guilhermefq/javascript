@@ -8,8 +8,18 @@ botaoAdicionar.addEventListener("click", function(event){
 
     var pacienteTr = montaTr(paciente);
 
+    var erros = validaPaciente(paciente);
+
+    if(erros.length > 0){
+        exibeMensagensErro(erros)
+        return;
+    }
+
     var tabela = document.querySelector("#tabela-pacientes");
     tabela.appendChild(pacienteTr);    
+
+    var mensagensErro = document.querySelector("#mensagens-erro");
+    mensagensErro.innerHTML = "";
 
     form.reset();
 });
@@ -49,4 +59,15 @@ function montaTr(paciente) {
 
     //Retorna Tr
     return pacienteTr;
+}
+
+function exibeMensagensErro(erros){
+    var ul = document.querySelector("#mensagens-erro");
+    ul.innerHTML = "";
+
+    erros.forEach(function(erro){
+        var li = document.createElement("li");
+        li.textContent = erro;
+        ul.appendChild(li);        
+    });
 }
